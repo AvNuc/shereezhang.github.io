@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<title>Mining</title>
+
+  <meta name="description" content="In this section you'll find basic information about Doks and how to install it and use it properly. If you're first time user then you should read Getting Started section first.">
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://aion.network/material/views/aion/assets/img/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i|Noto+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=latin-ext">
+<link rel="stylesheet" href="../doks-theme/assets/css/style.css">
+
+  </head>
+
+  <body class="" data-spy="scroll" data-target=".js-scrollspy" data-gr-c-s-loaded="true">
+  <div class="offcanvas visible-xs">
+    <ul class="offcanvas__nav">
+
+
+        <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
+        <li><a href="../Mining/index.html">Mining</a></li>
+        <li><a href="https://github.com/aionnetwork">Github</a></li>
+
+
+    </ul><!-- /.offcanvas__nav -->
+  </div>
+  <header class="site-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          
+            <a href="https://aion.network/" class="site-header__logo"><img src="../doks-theme/assets/images/layout/logo.png"></a>
+          
+            <ul style="color:white" class="site-header__nav hidden-xs">
+              
+              <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
+              <li><a href="../Mining/index.html">Mining</a></li>
+              <li><a href="https://github.com/aionnetwork">Github</a></li>
+
+            </ul><!-- /.site-header__nav -->
+            <button class="offcanvas-toggle visible-xs">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button><!-- /.offcanvas-toggle -->
+          
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+    
+
+
+    <div class="hero-subheader hero-subheader--before-out">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="align-container" data-mh>
+              <div class="align-inner">
+
+                  <h1 class="hero-subheader__title">Mining</h1>
+
+              </div><!-- /.align-inner -->
+
+            </div><!-- /.align-container -->
+          </div><!-- /.col -->
+
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.hero-subheader -->
+
+
+
+    <div class="section">
+      <div class="container">
+
+        <div class="row">
+        <div class="col-md-4">
+          <div class="sections-list-wrapper">
+            <div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
+          </div>
+        </div><!-- /.col -->
+          <div class="col-md-7">
+            <div class="content">
+
+
+
+<h2 id="using-owners-manual">Mining Overview</h2>
+<p>Follow through this manual to install Aion and start using its various features. You'll soon be participating in the Aion Network ecosystem.
+  <br><br>This guide will take you through the following three modules: 
+<ul>
+  <li>1. Aion kernel</li>
+  <li>2. Aion miner</li>
+  <li>3. Solo mining pool</li>
+</ul>
+
+<p>We have compiled some <a href="../Mining/index.html#FAQ" target="blank">FAQ</a>, please feel free to reach out to the Aion team for additional questions.</p>
+
+<div class="callout callout--info">
+    <p><strong>Aion White Papers</strong> You can find full Aion Developer documentation <a href="https://aion.network/developers/" target="blank">here</a>.</p>
+</div>
+
+<h3 id="requirements"><strong>System Requirements</strong></h3>
+<p> Before we begin, make sure you have the following:</p>
+
+<ul>
+  <li><a href="https://www.ubuntu.com/download/desktop" target="blank">Ubuntu 16.04 or a later version</a> (<a href="https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0" target="blank">installation tutorial</a>)</li>
+  <li>CUDA 9.0 compatible driver (NVIDIA 387.34+) for GPU based mining.(optional)</li>
+</ul>
+
+<h2 id="kernel-intro">Kernel</h2>
+<h3 id="getting-kernel"><strong>Getting the Kernel</strong></h3>
+<p>Start by downloading the most recent Aion binary file <strong>aion-{version}.tar.bz2</strong> <a href="https://github.com/aionnetwork/aion/releases" target="blank">here</a>.
+    <br><br>
+Once you have the binary file, you will need to unarchive the contents in your chosen destination using one of two methods:</p>
+<ul>
+  <li>right click the binary file and select "Extract Here"</li>
+  <li>or open a terminal in the same directory and run the following command:<br><code class="highlighter-rouge">tar xvjf aion-{version}.tar.bz2</code></li>
+</ul>
+<p>A folder named <strong>aion</strong> will be created in the chosen directory.</p>
+
+<h3 id="creating-accounts"><strong>Creating Accounts</strong></h3>
+<p>Account addresses are required for mining and sending transactions. An address is a hashed representation of your publicKey, prefixed with an identifier "0xa0".</p>
+
+<p>After account creation, an associated <strong>keystore</strong> file is generated and placed in the <strong>aion/keystore</strong> directory. Each keystore file name contains the address and can be referred to in case of lost account address.</p>
+
+<div class="callout callout--warning">
+    <p><strong>Note</strong>You should backup the keystore folder to ensure you do not lose access to your accounts; there is no recovery mechanism for the lost keys.</p>
+</div>
+
+<h4 id="create-acc">Create your account on the kernel:</h4>
+<p>1. Go to <strong>aion</strong> directory<br>2. Open a terminal and run the following command:<br><code class="highlighter-rouge">./aion.sh -a create</code><br>3. Input your chosen password once prompted<br>4. Copy and save the created account address shown.</p>
+
+
+<h3 id="opt-section"><strong>Peer ID and Seed Nodes (optional)</strong></h3>
+<h4 id="peer-id">Generating peer ID</h4>
+<p>Peer ID is how a node will identify itself on the network, and for most general miners, the ID will not be used. However, if you were to run your own mining pool, you would need to give other miners who wish to join your pool the peer ID (along with the Ip and port). <br><br>The default config.xml file will auto assign an ID on the first boot, and will continue to use that ID afterwards. If you want to generate a custom ID, you can manually enter a valid UUID into the config file. NodeID can be changed any point.</p>
+
+<h4 id="seed-nodes">Setting up seed nodes</h4>
+<p>Your kernel will have access to the seed nodes by default. You should not remove these nodes from the configuration. Additional peers can be added to configuration by updating the nodes section and including peer id, port, and IP, which would be necessary to join public mining pools. Peer Id for a node should be generated using the steps mentioned above. Update the nodes section:</p>
+
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;nodes&gt; &lt;node&gt;p2p://PEER_ID@IP:PORT&lt;/node&gt; &lt;/nodes&gt;</span><span class="pi"></span>
+</code></pre></div></div>
+
+<h3 id="setting-ip"><strong>Setting Up IP</strong></h3>
+<p>To allow connection among peers the ip section of the <strong>config.xml</strong> file found in <strong>aion/config/config.xml</strong> should be updated to include a public IP. If you are unsure about having a public IP, set it to 0.0.0.0 :</p>
+
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;p2p&gt; &lt;ip&gt;0.0.0.0&lt;/ip&gt; &lt;port&gt;30303&lt;/port&gt; &lt;/p2p&gt;</span><span class="pi"></span>
+</code></pre></div></div>
+
+<h3 id="launch-kernel"><strong>Launch Kernel</strong></h3>
+<p>Begin syncing your node with the Aion network.</p> 
+
+<p>1. Navigate to the <strong>aion</strong> directory<br>2. Open a terminal and run:<br><code class="highlighter-rouge">./aion.sh</code></p>
+
+<h3 id="connection-status"><strong>View Connection Status (optional)</strong></h3>
+
+<h4 id="display-peers">Display connected peers:</h4>
+<p>1. Access the <strong>config.xml</strong> file<br>2. Set show-status to true:</p>
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;show-status&gt;true&lt;/show-status&gt;</span><span class="pi"></span></code></pre></div></div>
+
+<h4 id="view-peers">View connected peers:</h4>
+<p>1. Open another terminal<br>2. Run the following command to view connected peers<br><code class="highlighter-rouge">netstat -antp | grep java</code></p>
+
+
+
+
+
+<h2 id="aion-miner">Miner</h2>
+<p> A miner runs your system to solve a difficult mathematical problem by guessing the input value of a hash function. The difficulty of the problem is determined by network difficulty (which adjusts itself based on the network hash rate: higher hash rate results in greater difficulty).<br><br>
+There are two types of miners that can work with the kernel: Internal and External miner. <a href="../Aion Set-Up/index.html#internal-miner" target="blank">Internal miner</a> does not mine on the network, but rather on your local kernel. It could be used to test and run your own chain, as it has a shorter set-up time and  adequate functionality to mine for AION on the <a href="https://conquest.aion.network/#/dashboard" target="blank">Conquest Testnet</a>.</p>
+
+<div class="callout callout--warning">
+    <p><strong>Note</strong>Mining tokens on the testnet is for development purposes only. AION awarded on the testnet do not have trading value.</p>
+</div>
+
+<p><a href="../Aion Set-Up/index.html#external-miner" target="blank">External miner</a> connects your kernel to the network, and mines AION tokens on the mainnet using either a solo or public mining pool.</p>
+
+<h3 id="internal-miner"><strong>Internal miner</strong></h3>
+<p>The internal miner runs on the local node and is provided with the kernel. It can be configured by modifying the <strong>config.xml</strong> file in the aion directory (aion/config/config.xml). To setup internal mining, update the following fields in the consensus section:</p>
+
+<ul>
+  <li><strong>Mining:</strong> should be set to true to enable mining</li>
+  <li><strong>Miner-address:</strong> the wallet address that will collect AION for mining blocks. The account address created in creating accounts section can be used for this purpose.</li>
+  <li><strong>Cpu-mine-threads:</strong> number of logical CPU cores to use for mining. This number should be between 1 and 75% of your maximum CPU logical cores. The number of logical cores may be seen in either task manager (Windows) or system monitor (Ubuntu). It is not recommended to go above 75% of the total logical cores.</li>
+  <li><strong>extraData:</strong> any hex string up to 32 bytes</li>
+</ul>
+
+<p>Once the <strong>config</strong> file has been updated, the kernel should pick up the mining settings next time it is launched. Mining is normally delayed 10 seconds to allow sufficient time for the kernel to fully start.<br><br> An example configuration for the consensus section: </p>
+
+<div class="example"></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">&lt;consensus&gt;</span>
+  <span class="na">&lt;mining&gt;true&lt;/mining&gt;</span>
+  <span class="na">&lt;miner-address&gt;0000000000000000000000000000000000000000000000000000000000000111&lt;/miner-address&gt;</span>
+  <span class="na">&lt;cpu-mine-threads&gt;2&lt;/cpu-mine-threads&gt;</span>
+  <span class="na">&lt;extra-data&gt;MyAion&lt;/extra-data&gt;</span>
+<span class="na">&lt;consensus&gt;</span>
+</code></pre></div></div>
+
+<div class="callout callout--info">
+    <p><strong>Configuration file</strong>More information on the sections of the config.xml file can be found on the <a href="https://github.com/aionnetwork/aion/blob/e22231526367328e84ee9b342288eeb7bc0e9ed3/modBoot/resource/config.xml" target="blank">GitHub repository</a>.</p>
+</div>
+
+<h3 id="external-miner"><strong>External miner</strong></h3>
+<p>Two types of miners, CPU and GPU-CUDA, are provided as options for external mining. These miners are designed to be used in conjunction with the provided <a href="../p/index.html#mining-pool" target="blank">solo mining pool</a>. Future miner versions will be adapted to join public pools.<br><br>For mining, GPUs have a more simple architecture than CPUs, making them faster for mining. However, the specific hardware required for GPU-CUDA mining (NVIDIA 387.34+) may require separate installation onto your machine, and thus CPU mining may be more convenient.</p>
+
+<h3 id="cpu-miner"><strong>a) CPU miner</strong></h3>
+<p>Download the the pre-built CPU miner binary <strong>aionminer_CPU.tar.bz2</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and then follow the proceeding steps.</p>
+
+<h4 id="unarchive-binary">Unarchive the miner binary file:</h4>
+<p>1. Copy the <strong>aionminer_CPU.tar.bz2</strong> file into the <strong>aion</strong> directory<br>2. Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xvjf aionminer_CPU.tar.bz2</code></p>
+
+<h4 id="run-binary">Run the aionminer file with the desired parameter values:</h4>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Parameter</th>
+      <th style="text-align: left">Input</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-h</code></td>
+      <td style="text-align: left"><strong>help</strong></td>
+      <td style="text-align: left">Print this help message and quits</td>
+    </tr>
+        <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-l</code></td>
+      <td style="text-align: left"><strong>location</strong></td>
+      <td style="text-align: left">Stratum server:port</td>
+    </tr>
+        <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-u</code></td>
+      <td style="text-align: left"><strong>username</strong></td>
+      <td style="text-align: left">Username (aion address)</td>
+    </tr>
+        <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-a</code></td>
+      <td style="text-align: left"><strong>port</strong></td>
+      <td style="text-align: left">Local API port (default: 0 = do not bind)</td>
+    </tr>
+        <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-d</code></td>
+      <td style="text-align: left"><strong>level</strong></td>
+      <td style="text-align: left">Debug print level (0 : print all, 5 : fatal only, default: 2)</td>
+    </tr>
+        <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-b</code></td>
+      <td style="text-align: left"><strong>benchmark</strong></td>
+      <td style="text-align: left">[=arg(=200)] Run in benchmark mode (default: 200 iterations)</td>
+    </tr>
+        <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-y</code></td>
+      <td style="text-align: left"><strong>threads</strong></td>
+      <td style="text-align: left">Number of CPU threads -e [ext] Force CPU ext (0 = SSE2, 1 = AVX, 2 = AVX2)</td>
+    </tr>
+</tbody>
+</table>
+
+<p>Please refer to the above CPU Miner Parameters. The following example will run the AION CPU miner with 4 threads connecting to a mining pool running locally, listening on port 3333 for incoming connections: </p>
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span>./aionminer -t 4 -l 127.0.0.1:3333 -u {0xacc}</span></code></pre></div></div>
+
+<h4 id="benchmark-binary">Running a benchmark on your CPU (optional):</h4>
+<div class="callout callout--info">
+    <p><strong>Benchmark</strong>The benchmark will assess the performance of your CPU configuration by running 200 blocks.</p>
+</div>
+<p>This example will run a benchmark on your CPU using a single thread:</p>
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span>./aionminer -b -t 1</span></code></pre></div></div>
+
+
+<h3 id="gpu-miner"><strong>b) GPU-CUDA miner</strong></h3>
+<p><strong>Requirements:</strong> CUDA 9.0 compatible driver (NVIDIA 387.34+) for GPU based mining. <br><br>Download the pre-built GPU miner binary <strong>aionminer_CPU.tar.bz2</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and then follow the proceeding steps.</p>
+
+<h4 id="unarchive-bin">Unarchive the miner binary file:</h4>
+<p>1. Copy the <strong>aionminer_CUDA.tar.bz2 </strong> file into the <strong>aion</strong> directory<br>2. Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xvjf aionminer_CUDA.tar.bz2</code></p>
+
+<h4 id="run-bin">Run the aionminer file with the desired parameter values:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Parameter</th>
+      <th style="text-align: left">Input</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-h</code></td>
+      <td style="text-align: left"><strong>help</strong></td>
+      <td style="text-align: left">Print this help message and quits</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-l</code></td>
+      <td style="text-align: left"><strong>location</strong></td>
+      <td style="text-align: left">Stratum server:port</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-u</code></td>
+      <td style="text-align: left"><strong>username</strong></td>
+      <td style="text-align: left">Username (aion address)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-a</code></td>
+      <td style="text-align: left"><strong>port</strong></td>
+      <td style="text-align: left">Local API port (default: 0 = do not bind)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-d</code></td>
+      <td style="text-align: left"><strong>level</strong></td>
+      <td style="text-align: left">Debug print level (0 : print all, 5 : fatal only, default: 2)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-b</code></td>
+      <td style="text-align: left"><strong>benchmark</strong></td>
+      <td style="text-align: left">[=arg(=200)] Run in benchmark mode (default: 200 iterations)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">ci</code></td>
+      <td style="text-align: left"><strong>information</strong></td>
+      <td style="text-align: left">Show CUDA info</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-cv</code></td>
+      <td style="text-align: left"><strong>solver</strong></td>
+      <td style="text-align: left">CUDA solver (0 = djeZo, 1 = tromp, default=1)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-cd</code></td>
+      <td style="text-align: left"><strong>devices</strong></td>
+      <td style="text-align: left">Enable mining on spec. devices</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-cb</code></td>
+      <td style="text-align: left"><strong>blocks</strong></td>
+      <td style="text-align: left">Number of blocks (per device)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">-ct</code></td>
+      <td style="text-align: left"><strong>threads</strong></td>
+      <td style="text-align: left">Number of threads per block (per device)</td>
+    </tr>
+</tbody>
+</table>
+
+<p>Please refer to the above GPU-CUDA Miner Parameters. The following example will run the AION CUDA miner with 64 blocks and 64 threads per block on device 0 using solver version 1 (CUDA Tromp): </p>
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span>./aionminer -cd 0 -cv 1 -cb 64 -ct 64 -u {0xacc}</span></code></pre></div></div>
+
+<h4 id="benchmark-bin">Running a benchmark on your GPU (optional):</h4>
+
+<div class="callout callout--info">
+    <p><strong>Benchmark</strong>The benchmark will assess the performance of your GPU configuration by running 200 blocks.</p>
+</div>
+
+<p>This example will run a benchmark on your GPU using 64 blocks and 64 threads per block on device 0 and the CUDA-Tromp solver: </p>
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span>./aionminer -cd 0 -cv 1 -cb 64 -ct 64 -b</span></code></pre></div></div> 
+
+
+
+
+<h2 id="mining-pool">Mining Pool</h2>
+
+<p>This section will take you through installation of the Aion solo mining pool, which should be used with the external miner. During the initial Kilimanjaro (Aion Phase 1) launch, only the <a href="../Aion Set-Up/index.html#mp-prerequisites" target="blank">Aion solo miner</a> is currently officially supported on the network. Users can join public pools at their own risk. The Aion Foundation may release an official mining pool at a later date. All rewards will be added to the account specified in the Kernel configuration file.</p>
+
+<h3 id="solo-public"><strong>Solo pool vs. public pool</strong></h3>
+<p>A solo pool has one node mining for rewards at the network difficulty, with the full payout to the one account. With a public pool (not covered in this document), a group of nodes work together, distributing a reward proportional to each node's work when a block is mined by the pool. Often, there are fees associated with joining a public pool, and although rewards are received more consistently in a public pool, this may not guarantee benefit over solo-mining.</p>
+
+<div class="callout callout--info">
+    <p><strong>Aion forum</strong>You may learn more about the status of community-created public mining pools on our <a href="https://forum.aion.network/" target="blank">forum</a>. Aion Foundation is not affiliated with any of the current public pools.</p>
+</div>
+
+<h3 id="mp-prerequisites"><strong>Prerequisites</strong></h3>
+<p>In order to run the mining pool, you must already have:</p>
+
+<ul>
+  <li>Aion kernel and miner</li>
+  <li>Python v2.7*</li>
+</ul>
+<p>*Included by default with Ubuntu desktop, may need to be installed separately in Ubuntu server (see below):</p>
+
+<div class="callout callout--warning">
+    <p><strong>Python installation (if necessary):</strong>1. Open terminal <br>2. Run the following commands:<br> <code class="highlighter-rouge">sudo apt-get update<br> sudo apt-get install build-essential make<br> sudo apt-get install python2.7 python-dev</code></p>
+</div>
+
+<h3 id="config-update"><strong>Update Configuration File</strong></h3>
+<p>You will have to modify the <strong>config.xml</strong> file in the aion directory (aion/config/config.xml) before running the mining pool. Update the following fields in consensus section:</p>
+
+<ul>
+  <li><strong>Mining:</strong> set to false to disable internal mining</li>
+  <li><strong>Miner-address:</strong> the wallet address that will collect mined rewards. The account address created in creating accounts section can be used for this purpose.</li>
+</ul>
+
+<p>Example of an updated consensus section to enable external mining:</p>
+<div class="example"></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">&lt;consensus&gt;</span>
+  <span class="na">&lt;mining&gt;false&lt;/mining&gt;</span>
+  <span class="na">&lt;miner-address&gt;A012341234123412341234123412341234123412341234123412341234123412&lt;/miner-address&gt;</span>
+  <span class="na">&lt;cpu-mine-threads&gt;8&lt;/cpu-mine-threads&gt;</span>
+  <span class="na">&lt;extra-data&gt;AION&lt;/extra-data&gt;</span>
+<span class="na">&lt;consensus&gt;</span>
+</code></pre></div></div>
+
+<div class="callout callout--warning">
+    <p><strong>Note</strong>Verify that the APIs enabled section includes the "stratum" option.</p>
+</div>
+
+<div class="example"></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">&lt;apis-enabled&gt;web3,eth,personal,stratum&lt;/apis-enabled&gt;</span>
+</code></pre></div></div>
+
+
+<h3 id="install-run-sp"><strong>Install and Run</strong></h3>
+<p>Download the latest prepackaged mining pool file <strong>aion-solo-pool-{version}.tar.gz</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and follow the proceeding steps:</p>
+
+<h4 id="unpack-solo-pool">Unpack the aion-solo-pool file:</h4>
+<p>1. Navigate to the download directory<br>2. Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xf aion-solo-pool-{VERSION}.tar.gz</code></p>
+
+<h4 id="mp-run-config">Run the configure script:</h4>
+<p>1. Open terminal in the <strong>aion-solo-pool-{VERSION}</strong> directory, run the command<br>
+<code class="highlighter-rouge">./configure.sh</code></p>
+
+<div class="callout callout--warning">
+    <p><strong>Note</strong>This script may take several minutes to complete, and should only be run once.</p>
+</div>
+
+<h4 id="run-solo">Run aion-solo-pool:</h4>
+<p>1. In the same terminal, run<br><code class="highlighter-rouge">./run_quickstart.sh</code></p>
+
+<div class="callout callout--warning">
+    <p><strong>Launch the Aion kernel in a separate terminal:</strong>1. Navigate to the aion directory<br>2. Open a terminal and run:<br><code class="highlighter-rouge">./aion.sh</code></p>
+</div> 
+
+<p><strong>If you now have the kernel, miner, and solo-mining-pool running, congrats! You're now mining on Aion.</strong></p>
+
+<div class="callout callout--info">
+    <p><strong>Check Balance</strong>You can check your balance by inputting your address at the top of the Aion <a href="https://mainnet.aion.network/#/dashboard" target="blank">dashboard</a>.</p>
+</div>
+
+<h2 id="FAQ">FAQ</h2>
+
+<h3 id="q1">What does the configure file (config.xml) mean?</h3>
+<p>The configuration file can be found <a href="https://forum.aion.network/" target="blank">here</a>. The comments in each section (in grey) are commented descriptions for the section.</p>
+
+<h3 id="q2">Is there a miner for AMD?</h3>
+<p>There is no AMD miner currently available. Development for an AMD miner may be considered in the future.</p>
+
+<h3 id="q3">Is GPU mining available for Windows?</h3>
+<p>Currently, Windows OS cannot be used to mine. Development for Windows-compatible miners may be considered in the future.</p>
+
+<h3 id="q4">What are the current mining pools?</h3>
+<p>During the initial Kilimanjaro launch, only the Aion solo miner is currently officially supported on the network. Users can join public pools at their own risk. The Aion Foundation may release an official mining pool at a later date.</p>
+
+<h3 id="q5">How do I import a private key?</h3>
+<p>[EDIT ME]<br>1. take the private key of the pair generated by web wallet<br>2. run <code class="highlighter-rouge">./aion.sh -a import private-key</code><br>3. <strong>aion.sh</strong> will be created in the <strong>keystore</strong>folder<br>4. print out the public key (address) of the private key<br>5. <code class="highlighter-rouge">./aion.sh -a list</code> to check if it matches the original pair.</p>
+
+
+
+            </div><!-- /.content -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.section -->
+
+    <div class="js-footer-area">
+
+
+  <!-- begin footer -->
+<footer id="footer">
+    <div class="footer-content">
+
+    <img id="platty-footer" src="https://aion.network/material/views/aion/assets/img/platty_footer.png">
+
+    <div id="footer-top">
+      
+      </div>
+    </div>
+
+    <div id="footer-bottom">
+      <div class="copyright-message"><p>This is the internet, <strong>decentralized</strong>.</p>
+<p>- Aion Foundation</p>
+</div>
+      <img id="curve-footer" src="https://aion.network/material/views/aion/assets/img/curve_footer.png">
+    </div>
+
+  </div>
+  </footer>
+
+  <!-- end footer-->
+
+
+<script src="../doks-theme/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/scripts.js"></script>
+
+
+
+
+    </div><!-- /.js-footer-area -->
+  </body>
+</html>
+</p>
+</div>
