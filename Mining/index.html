@@ -87,7 +87,8 @@
 
 
 
-<h2 id="using-owners-manual">Mining Overview</h2>
+<h2 id="using-owners-manual">Mining on Aion</h2>
+<h3 id="mining-overview">Overview</h3>
 <p>Follow through this manual to install Aion and start using its various features. You'll soon be participating in the Aion Network ecosystem.
   <br><br>This guide will take you through the following three modules: 
 <ul>
@@ -130,13 +131,12 @@ Once you have the binary file, you will need to unarchive the contents in your c
     <p><strong>Note</strong>You should backup the keystore folder to ensure you do not lose access to your accounts; there is no recovery mechanism for the lost keys.</p>
 </div>
 
-<h4 id="create-acc">Create your account on the kernel:</h4>
-<p>1. Go to <strong>aion</strong> directory<br>2. Open a terminal and run the following command:<br><code class="highlighter-rouge">./aion.sh -a create</code><br>3. Input your chosen password once prompted<br>4. Copy and save the created account address shown.</p>
+<p>1. Go to <strong>aion</strong> directory<br>2. Open a terminal and run the following command:<br><code class="highlighter-rouge">./aion.sh -a create</code><br>3. Input your chosen password once prompted (note that your password will not appear on terminal as you are typing it)<br>4. Copy and save the created account address shown.</p>
 
 
 <h3 id="opt-section"><strong>Peer ID and Seed Nodes (optional)</strong></h3>
 <h4 id="peer-id">Generating peer ID</h4>
-<p>Peer ID is how a node will identify itself on the network, and for most general miners, the ID will not be used. However, if you were to run your own mining pool, you would need to give other miners who wish to join your pool the peer ID (along with the Ip and port). <br><br>The default config.xml file will auto assign an ID on the first boot, and will continue to use that ID afterwards. If you want to generate a custom ID, you can manually enter a valid UUID into the config file. NodeID can be changed any point.</p>
+<p>Peer ID is how a node will identify itself on the network, and for most general miners, the ID will not be used. However, if you were to run your own mining pool, you would need to give other miners who wish to join your pool the peer ID (along with the IP and port). <br><br>The default config.xml file will auto assign an ID on the first boot, and will continue to use that ID afterwards. If you want to generate a custom ID, you can manually enter a valid UUID into the config file. This is the node ID, and can be changed any point.</p>
 
 <h4 id="seed-nodes">Setting up seed nodes</h4>
 <p>Your kernel will have access to the seed nodes by default. You should not remove these nodes from the configuration. Additional peers can be added to configuration by updating the nodes section and including peer id, port, and IP, which would be necessary to join public mining pools. Peer Id for a node should be generated using the steps mentioned above. Update the nodes section:</p>
@@ -144,6 +144,10 @@ Once you have the binary file, you will need to unarchive the contents in your c
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;nodes&gt; &lt;node&gt;p2p://PEER_ID@IP:PORT&lt;/node&gt; &lt;/nodes&gt;</span><span class="pi"></span>
 </code></pre></div></div>
+
+<div class="callout callout--warning">
+    <p><strong>Note</strong>Any changes to the config file will not take place until the Aion kernel is relaunched.</p>
+</div>
 
 <h3 id="setting-ip"><strong>Setting Up IP</strong></h3>
 <p>To allow connection among peers the ip section of the <strong>config.xml</strong> file found in <strong>aion/config/config.xml</strong> should be updated to include a public IP. If you are unsure about having a public IP, set it to 0.0.0.0 :</p>
@@ -160,7 +164,7 @@ Once you have the binary file, you will need to unarchive the contents in your c
 <h3 id="connection-status"><strong>View Connection Status (optional)</strong></h3>
 
 <h4 id="display-peers">Display connected peers:</h4>
-<p>1. Access the <strong>config.xml</strong> file<br>2. Set show-status to true:</p>
+<p>1. Access the <strong>config.xml</strong> file<br>2. Set show-status to true under the <strong>p2p</strong> section:</p>
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;show-status&gt;true&lt;/show-status&gt;</span><span class="pi"></span></code></pre></div></div>
 
@@ -256,12 +260,15 @@ There are two types of miners that can work with the kernel: Internal and Extern
       <td style="text-align: left">[=arg(=200)] Run in benchmark mode (default: 200 iterations)</td>
     </tr>
         <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">-y</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">-t</code></td>
       <td style="text-align: left"><strong>threads</strong></td>
       <td style="text-align: left">Number of CPU threads -e [ext] Force CPU ext (0 = SSE2, 1 = AVX, 2 = AVX2)</td>
     </tr>
 </tbody>
 </table>
+<div class="callout callout--warning">
+    <p><strong>CPU Threads</strong>We recommend that you allocate between 25% - 75% of your system's total number of CPUs.</p>
+</div>
 
 <p>Please refer to the above CPU Miner Parameters. The following example will run the AION CPU miner with 4 threads connecting to a mining pool running locally, listening on port 3333 for incoming connections: </p>
 <div class="example"></div>
@@ -459,16 +466,18 @@ There are two types of miners that can work with the kernel: Internal and Extern
   <li>gulp version 3.9.1 <a href="https://libraries.io/npm/gulp/3.9.1" target="blank">download and install</li>
 </ul>
 
-<h3 id="api-installation">Installation</h3>
+<h3 id="api-installation">Installation for Web3 Console</h3>
 <p>Web3 console can be downloaded from its repository on GitHub by either:</p>
 <ul>
   <li>Downloading a zip file containing the <a href="https://github.com/aionnetwork/aion_web3" target="blank">repository</a> by pressing the “Clone or download” button and extracting the zip file contents into your desired directory</li>
   <li>Or cloning the repository through the terminal using the command <code class="highlighter-rouge">git clone https://github.com/aionnetwork/aion_web3</code></li>
 </ul>
-<p>Navigate to the <strong>aion_web3</strong> directory and install the Web3 console below:</p>
+<p>Navigate to the <strong>aion_web3</strong> directory and install the Web3 console below using one of the following methods:</p>
+<ul>
+  <li>On terminal, run <br><code class="highlighter-rouge">npm install<br>gulp build</code><br><strong>or</strong></li>
+  <li>B. On terminal, run <br><code class="highlighter-rouge">npm install --save aion-web3</code></li>
+</ul>
 
-<h4 id="install-console">Install the Web3 console (choose one method):</h4>
-<p>A. On terminal, run <br><code class="highlighter-rouge">npm install<br>gulp build</code><br><strong>or</strong><br>B. On terminal, run <br><code class="highlighter-rouge">npm install --save aion-web3</code></p>
 
 <h3 id="use-console">API Use</h3>
 <p>You can include Aion’s Web3 API in your application using Web or Node.</p>
@@ -510,8 +519,6 @@ There are two types of miners that can work with the kernel: Internal and Extern
 
 <h3 id="unlock-account">Unlock Account</h3>
 <p>In order to make a transaction, the sender should first unlock their account.</p>
-
-<h4 id="ua">Unlocking account:</h4>
 <p>1. Run the Web3 console<br>2. Run the command<br><code class="highlighter-rouge">personal.unlockAccount('{0xacc}', '{pw}', {secondsToUnlock})</code></p>
 
 <table>
@@ -549,7 +556,6 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h3 id="tranfer-aion">Transfer Aion</h3>
 <p>You can send a transaction from one account to another with a specified value. The account of sender should be unlocked before making the transfer.</p>
 
-<h4 id="ta">Transferring Aion:</h4>
 <p>1. Run the Web3 console<br>2. Unlock your (sender) account<br>3. Run the command<br><code class="highlighter-rouge">eth.sendTransaction({from: '{0xacc_from}', to: '{0xacc_to}', value: {amount_to_transfer}})</code></p>
 
 <table>
@@ -582,6 +588,10 @@ There are two types of miners that can work with the kernel: Internal and Extern
     <p><strong>Create Wallet Backup or Import Account</strong>We recommend you keep track of your keystore files and copy them over to the new binary to successfully import/export accounts.</p>
 </div>
 
+<div class="callout callout--info">
+    <p><strong>JSON-RPC</strong>Aion currently uses the same JSON-RPC API as Ethereum. The listing of possible commands can be found <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC" target="blank">here</a></p>
+</div>
+
 
 <h2 id="FAQ">FAQ</h2>
 
@@ -598,7 +608,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>During the initial Kilimanjaro launch, only the Aion solo miner is currently officially supported on the network. Users can join public pools at their own risk. The Aion Foundation may release an official mining pool at a later date.</p>
 
 <h3 id="q5">How do I import a private key?</h3>
-<p>[EDIT ME]<br>1. take the private key of the pair generated by web wallet<br>2. run <code class="highlighter-rouge">./aion.sh -a import private-key</code><br>3. <strong>aion.sh</strong> will be created in the <strong>keystore</strong> folder<br>4. print out the public key (address) of the private key<br>5. <code class="highlighter-rouge">./aion.sh -a list</code> to check if it matches the original pair.</p>
+<p>1. take the private key of the pair generated by web wallet<br>2. run <code class="highlighter-rouge">./aion.sh -a import private-key</code><br>3. <strong>aion.sh</strong> will be created in the <strong>keystore</strong> folder<br>4. print out the public key (address) of the private key<br>5. <code class="highlighter-rouge">./aion.sh -a list</code> to check if it matches the original pair.</p>
 
 
 
