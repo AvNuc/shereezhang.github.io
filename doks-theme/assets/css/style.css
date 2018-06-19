@@ -110,6 +110,8 @@ button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusri
     background-color:#4221cc;
     padding:10px 65px 8px 20px;
     border-radius:9px;
+    margin-left: 27px;
+    margin-right: 150px;
     font-size:1rem;
     line-height:1;
     font-weight:500;
@@ -129,7 +131,7 @@ button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusri
 }
 .button-split:before{
     content:'';
-    background-image:url(../img/icons/arrow_icon_white.svg);
+    background-image:url(../images/layout/arrow_icon_white.svg);
     background-size:15px;
     background-repeat:no-repeat;
     z-index:2;
@@ -1904,8 +1906,10 @@ pre.highlight{
     padding:0;
     display:block;
     background-color:#fff;
-    border:2px solid rgba(37,57,81,0.2);
+    border:1px solid rgba(0,0,0,0);
     margin-bottom:.9375rem;
+    border-radius: 5px;
+    box-shadow: 0 0 12px 1px rgba(0,0,0,.1);
     transition:background-color .2s, border .2s
 }
 @media (min-width: 768px){
@@ -1914,10 +1918,10 @@ pre.highlight{
     }
 }
 .nav-grid__item:hover,.nav-grid__item:active,.nav-grid__item:focus{
-    border-color:#4221cc
+    border-color:#fff
 }
 .nav-grid__item:hover .nav-grid__btn,.nav-grid__item:active .nav-grid__btn,.nav-grid__item:focus .nav-grid__btn{
-    border-color:#4221cc
+    border-color:#fff
 }
 .nav-grid__item:hover .nav-grid__btn .icon,.nav-grid__item:hover .nav-grid__btn .example a::after,.example .nav-grid__item:hover .nav-grid__btn a::after,.nav-grid__item:hover .nav-grid__btn .sections-list ul li.has-submenu::after,.sections-list ul .nav-grid__item:hover .nav-grid__btn li.has-submenu::after,.nav-grid__item:active .nav-grid__btn .icon,.nav-grid__item:active .nav-grid__btn .example a::after,.example .nav-grid__item:active .nav-grid__btn a::after,.nav-grid__item:active .nav-grid__btn .sections-list ul li.has-submenu::after,.sections-list ul .nav-grid__item:active .nav-grid__btn li.has-submenu::after,.nav-grid__item:focus .nav-grid__btn .icon,.nav-grid__item:focus .nav-grid__btn .example a::after,.example .nav-grid__item:focus .nav-grid__btn a::after,.nav-grid__item:focus .nav-grid__btn .sections-list ul li.has-submenu::after,.sections-list ul .nav-grid__item:focus .nav-grid__btn li.has-submenu::after{
     -webkit-transform:translate(.625rem, 0);
@@ -1957,7 +1961,6 @@ pre.highlight{
     font-weight:500;
     text-transform:uppercase;
     color:#4221cc;
-    border-top:2px solid rgba(37,57,81,0.2);
     padding:1.25rem 1.875rem 0 1.875rem;
     transition:border .2s
 }
