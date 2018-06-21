@@ -22,6 +22,7 @@
 
         <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
         <li><a href="../Mining/index.html">Mining</a></li>
+        <li><a href="../Dapp Development/index.html">Dapps</a></li>
         <li><a href="https://github.com/aionnetwork">Github</a></li>
 
 
@@ -38,6 +39,7 @@
               
               <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
               <li><a href="../Mining/index.html">Mining</a></li>
+              <li><a href="../Dapp Development/index.html">Dapps</a></li>
               <li><a href="https://github.com/aionnetwork">Github</a></li>
 
             </ul><!-- /.site-header__nav -->
@@ -88,7 +90,7 @@
 
 
 <h2 id="using-owners-manual">Mining on Aion</h2>
-<h3 id="mining-overview">Overview</h3>
+<h3 id="mining-overview"><strong>Overview</strong></h3>
 <p>Follow through this manual to install Aion and start using its various features. You'll soon be participating in the Aion Network ecosystem.
   <br><br>This guide will take you through the following three modules: 
 <ul>
@@ -164,9 +166,9 @@ Once you have the binary file, you will need to unarchive the contents in your c
 <h3 id="connection-status"><strong>View Connection Status (optional)</strong></h3>
 
 <h4 id="display-peers">Display connected peers:</h4>
-<p>1. Access the <strong>config.xml</strong> file<br>2. Set show-status to true under the <strong>p2p</strong> section:</p>
+<p>1. Access the <strong>config.xml</strong> file<br>2. Set show-status to true under the <strong>sync</strong> section:</p>
 <div class="example"></div>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;show-status&gt;true&lt;/show-status&gt;</span><span class="pi"></span></code></pre></div></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;sync&gt;&lt;show-status&gt;true&lt;/show-status&gt;&lt;/sync&gt;</span><span class="pi"></span></code></pre></div></div>
 
 <h4 id="view-peers">View connected peers:</h4>
 <p>1. Open another terminal<br>2. Run the following command to view connected peers<br><code class="highlighter-rouge">netstat -antp | grep java</code></p>
@@ -457,7 +459,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h2 id="json-api">Using Aion: JSON-RPC (Web3) API</h2>
 <p> After successfully setting up your Aion node, you can start using Aion using the Web3 console. The <a href="https://web3js.readthedocs.io/en/1.0/" target="blank">Web3</a> console facilitates the usage of Web3 application programming interface on top of the Aion network.</p>
 
-<h3 id="api-prerequisites">Prerequisites</h3>
+<h3 id="api-prerequisites"><strong>Prerequisites</strong></h3>
 <p> The following are the prerequisites for building Aion Web3 API. You can download and install each item by following the provided link:</p>
 
 <ul>
@@ -466,7 +468,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
   <li>gulp version 3.9.1 <a href="https://libraries.io/npm/gulp/3.9.1" target="blank">download and install</li>
 </ul>
 
-<h3 id="api-installation">Installation for Web3 Console</h3>
+<h3 id="api-installation"><strong>Installation for Web3 Console</strong></h3>
 <p>Web3 console can be downloaded from its repository on GitHub by either:</p>
 <ul>
   <li>Downloading a zip file containing the <a href="https://github.com/aionnetwork/aion_web3" target="blank">repository</a> by pressing the “Clone or download” button and extracting the zip file contents into your desired directory</li>
@@ -479,7 +481,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 </ul>
 
 
-<h3 id="use-console">API Use</h3>
+<h3 id="use-console"><strong>API Use</strong></h3>
 <p>You can include Aion’s Web3 API in your application using Web or Node.</p>
 
 <h4 id="use-web">Web use</h4>
@@ -488,7 +490,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h4 id="use-node">Node use</h4>
 <p><code class="highlighter-rouge">var Web3 = require('aion-web3')<br>var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));</code></p>
 
-<h3 id="run-web3-console">Web3 Console</h3>
+<h3 id="run-web3-console"><strong>Web3 Console</strong></h3>
 <p>Interact with the Aion kernel using the console. Sample operations that may be performed include:</p>
 <ul>
   <li>view local accounts</li>
@@ -501,10 +503,10 @@ There are two types of miners that can work with the kernel: Internal and Extern
     <p><strong>Note</strong>You must be running these operations through the Web3 Console</p>
 </div> 
 
-<h4 id="running-wc">Running the Web3 console:</h4>
+<h4>Running the Web3 console:</h4>
 <p>1. Navigate to the <strong>aion</strong> directory<br>2. Open a terminal and run the kernel using<br><code class="highlighter-rouge">./aion.sh</code><br>3. Navigate to the <strong>aion_web3</strong> folder<br>4. Open a new terminal and run the console using<br><code class="highlighter-rouge">node console.js</code></p>
 
-<h3 id="view-accounts-wc-">View Local Accounts and Balances</h3>
+<h3 id="view-accounts-wc-"><strong>View Local Accounts and Balances</strong></h3>
 <div class="callout callout--info">
     <p><strong>Accounts</strong>Any of the accounts shown from the command below can be used to check balance, unlock an account, or transfer Aion.</p>
 </div>
@@ -517,7 +519,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span>eth.getBalance(‘0xa012341234123412341234123412341234123412341234123412341234123412’)</span></code></pre></div></div>
 
-<h3 id="unlock-account">Unlock Account</h3>
+<h3 id="unlock-account"><strong>Unlock Account</strong></h3>
 <p>In order to make a transaction, the sender should first unlock their account.</p>
 <p>1. Run the Web3 console<br>2. Run the command<br><code class="highlighter-rouge">personal.unlockAccount('{0xacc}', '{pw}', {secondsToUnlock})</code></p>
 
@@ -553,7 +555,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
     <p><strong>Note</strong>The user should only attempt this command with their local node that they manage/own themselves.</p>
 </div>
 
-<h3 id="tranfer-aion">Transfer Aion</h3>
+<h3 id="tranfer-aion"><strong>Transfer Aion</strong></h3>
 <p>You can send a transaction from one account to another with a specified value. The account of sender should be unlocked before making the transfer.</p>
 
 <p>1. Run the Web3 console<br>2. Unlock your (sender) account<br>3. Run the command<br><code class="highlighter-rouge">eth.sendTransaction({from: '{0xacc_from}', to: '{0xacc_to}', value: {amount_to_transfer}})</code></p>

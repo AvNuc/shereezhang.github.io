@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<title>Dapps</title>
+
+  <meta name="description" content="In this section you'll find basic information about Doks and how to install it and use it properly. If you're first time user then you should read Getting Started section first.">
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://aion.network/material/views/aion/assets/img/favicon/favicon-32x32.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i|Noto+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=latin-ext">
+<link rel="stylesheet" href="../doks-theme/assets/css/style.css">
+
+  </head>
+
+  <body class="" data-spy="scroll" data-target=".js-scrollspy" data-gr-c-s-loaded="true">
+  <div class="offcanvas visible-xs">
+    <ul class="offcanvas__nav">
+
+
+        <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
+        <li><a href="../Mining/index.html">Mining</a></li>
+        <li><a href="../Dapp Development/index.html">Dapps</a></li>
+        <li><a href="https://github.com/aionnetwork">Github</a></li>
+
+
+    </ul><!-- /.offcanvas__nav -->
+  </div>
+  <header class="site-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          
+            <a href="https://aion.network/" class="site-header__logo"><img src="../doks-theme/assets/images/layout/logo.png"></a>
+          
+            <ul style="color:white" class="site-header__nav hidden-xs">
+              
+              <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
+              <li><a href="../Mining/index.html">Mining</a></li>
+              <li><a href="../Dapp Development/index.html">Dapps</a></li>
+              <li><a href="https://github.com/aionnetwork">Github</a></li>
+
+            </ul><!-- /.site-header__nav -->
+            <button class="offcanvas-toggle visible-xs">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button><!-- /.offcanvas-toggle -->
+          
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+    
+
+
+    <div class="hero-subheader hero-subheader--before-out">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="align-container" data-mh>
+              <div class="align-inner">
+
+                  <h1 class="hero-subheader__title">Dapp Development</h1>
+
+              </div><!-- /.align-inner -->
+
+            </div><!-- /.align-container -->
+          </div><!-- /.col -->
+
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.hero-subheader -->
+
+
+
+    <div class="section">
+      <div class="container">
+
+        <div class="row">
+        <div class="col-md-4">
+          <div class="sections-list-wrapper">
+            <div class="sections-list js-sections js-affix js-scrollspy hidden-xs hidden-sm"></div><!-- /.sections-list -->
+          </div>
+        </div><!-- /.col -->
+          <div class="col-md-7">
+            <div class="content">
+
+
+
+<h2 id="dapp-dev-overview">Dapp Development Overview</h2>
+<p>This guide will take you through some more advanced configuration for Aion. It is meant for those with some programming background, but not necessarily on blockchain.</p>
+<div class="callout callout--info">
+    <p><strong>Migration</strong>If you are already developing on blockchain, but wish to explore building on Aion or migrate your dapp to Aion, you can skip over to the <a href="../p/index.html#dapp-migration">migration section.</a></p>
+</div>
+<p>In this guide, we'll be going over:</p>
+<ul>
+  <li>setting up the development environment</li>
+  <li>compiling, deploying, and testing smart contracts</li>
+  <li>error handling</li>
+  <li>migrating Dapps</li>
+  <li>examples of Aion tools/APIs</li>
+</ul>
+  <h3><strong>Prerequisites:</strong></h3>
+  <p> Before we begin, make sure you have the following:</p>
+  <ul>
+    <li><a href="https://www.ubuntu.com/download/desktop" target="blank">Ubuntu 16.04 or a later version</a> (<a href="https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0" target="blank">installation tutorial</a>)</li>
+  </ul>
+
+
+<h2 id="dapp-smart-contracts">Smart Contracts in Aion</h2>
+  <h3 id="dapp-intro-sc"><strong>Intro to Smart Contracts</strong></h3>
+
+  <h3 id="dapp-compile"><strong>Compile</strong></h3>
+  <p>Before you can deploy your contract, you’ll need two things (which you will get by compiling the contract):<br><br>1. Compiled ‘code’ - bytecode<br>2. Application Binary Interface (ABI) – JavaScript Object that defines how the machine is to interact with the contract
+  
+  <h3 id="dapp-deploy"><strong>Deploy</strong></h3>
+  <p>Deploying your smart contract through the deploy function requires a contract address, ABI, the code, and an unlocked account.</p>
+  <div class="callout callout--warning">
+    <p><strong>Note</strong> you will not be able to deploy your smart contract without having unlocked your account. Steps to unlock your account can be found <a href="../Mining/index.html#unlock-account" target="blank">here.</a></p>
+  </div>
+  <h3 id="dapp-test"><strong>Test</strong></h3>
+  <p>During the testing phase you will need to interact with your Smart contract through web3 API, and by calling functions and getters.</p>
+
+  <h3 id="dapp-error-handling"><strong>Error Handling</strong></h3>
+  <p>This section will cover common issues one may face during the compiling, deployment, and testing of their smart contract. There are sections of the config/config.xml file that can be edited to shoe debug/error issues pertaining ot API, VM, transactions, etc. if you wish to understand more about the kernel log.</p>
+
+<h2 id="dapp-migration">Migration</h2>
+<p>This section will cover how to develop or migrate an existing dapp from Ethereum to Aion, and the tools that can be used to do so.</p>
+
+<h2 id="dapp-examples">Examples</h2>
+
+<h2 id="dapp-demo-app">Demo App</h2>
+
+<h2 id="dapp-FAQ">FAQ</h2>
+
+  <h3 id="d-q1">How do you configure the system to be working on a local node/private blockchain?</h3>
+  <p>Access the config/config.xml file, and edit in the following ways:</p>
+  <ul>
+    <li>remove all nodes in the &lt;nodes&gt; section to run the kernel locally</li>
+    <li>connect to a private network by putting the desired node IPs in the &lt;nodes&gt; section</li>
+  </ul>
+
+  <h3 id="d-q2">What are the ideal nrg values for smart contract deployment and transaction execution on Aion?</h3>
+  <table>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Deployment</strong></td>
+      <td style="text-align: left">&gt;= 2M 'gas'</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Transaction executions</strong></td>
+      <td style="text-align: left">&lt;= 2M 'gas'</td>
+    </tr>
+  </tbody>
+  </table>
+
+  <h3 id="d-q3">How do you assign balance to addresses for transaction testing purposes?</h3>
+  <p>There are two general ways in which you can assign balance for testing purposes:</p>
+  <ul>
+    <li>When initially creating the accounts (see <a href="../Mining/index.html#creating-accounts" target="blank">Creating an Account</a>), replace the new accounts into the genesis / keystore files and remove the database to restart the kernel (the changes made to the genesis file will not come into effect otherwise)</li>
+    <p>&emsp;&ensp;&nbsp;<strong>or</strong></p>
+    <li>transfer balance using an existing account from the genesis account to new account via <a href="../Mining/index.html#run-web3-console" target="blank">web3 calls</a></li> 
+  </ul>
+
+  <h3 id="d-q4">How do I configure the genesis.json to run in the testnet, and get balance on my account?</h3>
+  <p>Navigate to the config folder, and note that there are currently two .json files:</p>
+  <ul>
+    <li>genesis.json</li>
+    <li>testnet.json</li> 
+  </ul>
+  <p>Then, rename <strong>gensis.json</strong> to anything of your choice, and rename <strong>testnet.json</strong> to 'genesis.json'.<br><br>You can then get balance on your account for testing purposes by:<br><br>1. <a href="../Mining/index.html#creating-accounts" target="blank">Creating an Account</a><br>2. Navigate to the newly-named "genesis.json" (that was originally testnet.json), and add your accounts in the <strong>alloc</strong> object.<br>3. check your account balances using <a href="../Mining/index.html#run-web3-console" target="blank">web3 calls</a></p>
+
+  <div class="callout callout--warning">
+    <p><strong>Note</strong>Remember to remove the database folder before running kernel for these changes to take effect.</p>
+  </div>
+
+            </div><!-- /.content -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.section -->
+
+    <div class="js-footer-area">
+
+
+  <!-- begin footer -->
+<footer id="footer">
+    <div class="footer-content">
+
+    <img id="platty-footer" src="https://aion.network/material/views/aion/assets/img/platty_footer.png">
+
+    <div id="footer-top">
+      
+      </div>
+    </div>
+
+    <div id="footer-bottom">
+      <div class="copyright-message"><p>This is the internet, <strong>decentralized</strong>.</p>
+<p>- Aion Foundation</p>
+</div>
+      <img id="curve-footer" src="https://aion.network/material/views/aion/assets/img/curve_footer.png">
+    </div>
+
+  </div>
+  </footer>
+
+  <!-- end footer-->
+
+
+<script src="../doks-theme/assets/js/vendor/jquery.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/vendor/bootstrap/affix.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/vendor/bootstrap/scrollspy.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/vendor/matchHeight.min.js"></script>
+<script type="text/javascript" src="../doks-theme/assets/js/scripts.js"></script>
+
+
+
+
+    </div><!-- /.js-footer-area -->
+  </body>
+</html>
+</p>
+</div>
