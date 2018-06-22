@@ -379,14 +379,20 @@ There are two types of miners that can work with the kernel: Internal and Extern
 
 <h2 id="mining-pool">Mining Pool</h2>
 
-<p>This section will take you through installation of the Aion solo mining pool, which should be used with the external miner. During the initial Kilimanjaro (Aion Phase 1) launch, only the <a href="../Aion Set-Up/index.html#mp-prerequisites">Aion solo miner</a> is currently officially supported on the network. Users can join public pools at their own risk. The Aion Foundation may release an official mining pool at a later date. All rewards will be added to the account specified in the Kernel configuration file.</p>
+<p>This section will take you through installation of the Aion solo mining pool, which should be used with the external miner. During the initial Kilimanjaro (Aion Phase 1) launch, only the <a href="../Aion Set-Up/index.html#mp-prerequisites">Aion solo miner</a> was officially supported on the network. We have since released Aion pool mining software for the community:</p>
+
+<div class="callout callout--info">
+    <p><strong>Aion Pool Software</strong>
+      <ul>
+      <li><a href="https://blog.aion.network/new-aion-pool-software-6e3232527fa" target="blank">Blog Post</a> (overview and features)</li>
+      <li><a href="https://github.com/aionnetwork/aion_pool2" target="blank">Github</a> (guide and installation)</li>
+      </ul>
+    </p>
+</div>
 
 <h3 id="solo-public"><strong>Solo pool vs. public pool</strong></h3>
 <p>A solo pool has one node mining for rewards at the network difficulty, with the full payout to the one account. With a public pool (not covered in this document), a group of nodes work together, distributing a reward proportional to each node's work when a block is mined by the pool. Often, there are fees associated with joining a public pool, and although rewards are received more consistently in a public pool, this may not guarantee benefit over solo-mining.</p>
 
-<div class="callout callout--info">
-    <p><strong>Aion forum</strong>You may learn more about the status of community-created public mining pools on our <a href="https://forum.aion.network/" target="blank">forum</a>. Aion Foundation is not affiliated with any of the current public pools.</p>
-</div>
 
 <h3 id="mp-prerequisites"><strong>Prerequisites</strong></h3>
 <p>In order to run the mining pool, you must already have:</p>
@@ -459,11 +465,8 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h2 id="json-api">Using Aion: JSON-RPC (Web3) API</h2>
 <p> After successfully setting up your Aion node, you can start using Aion using the Web3 console. The <a href="https://web3js.readthedocs.io/en/1.0/" target="blank">Web3</a> console facilitates the usage of Web3 application programming interface on top of the Aion network.</p>
 
-<<<<<<< HEAD
 <h3 id="api-prerequisites"><strong>Prerequisites</strong></h3>
-=======
-              <h3 id="api-prerequisites"><strong>Prerequisites</strong></h3>
->>>>>>> 5fad8f657b23f58129b6c8c6268c6e5df0ae16c9
+
 <p> The following are the prerequisites for building Aion Web3 API. You can download and install each item by following the provided link:</p>
 
 <ul>
@@ -494,11 +497,8 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h4 id="use-node">Node use</h4>
 <p><code class="highlighter-rouge">var Web3 = require('aion-web3')<br>var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));</code></p>
 
-<<<<<<< HEAD
+
 <h3 id="run-web3-console"><strong>Web3 Console</strong></h3>
-=======
-<h3>Web3 Console</h3>
->>>>>>> 5fad8f657b23f58129b6c8c6268c6e5df0ae16c9
 <p>Interact with the Aion kernel using the console. Sample operations that may be performed include:</p>
 <ul>
   <li>view local accounts</li>
@@ -514,13 +514,10 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h4>Running the Web3 console:</h4>
 <p>1. Navigate to the <strong>aion</strong> directory<br>2. Open a terminal and run the kernel using<br><code class="highlighter-rouge">./aion.sh</code><br>3. Navigate to the <strong>aion_web3</strong> folder<br>4. Open a new terminal and run the console using<br><code class="highlighter-rouge">node console.js</code></p>
 
-<<<<<<< HEAD
 <h3 id="view-accounts-wc-"><strong>View Local Accounts and Balances</strong></h3>
-=======
-<h3 id="view-accounts-wc"><strong>View Local Accounts and Balances</strong></h3>
->>>>>>> 5fad8f657b23f58129b6c8c6268c6e5df0ae16c9
+
 <div class="callout callout--info">
-    <p><strong>Accounts</strong>Any of the accounts shown from the command below can be used to check balance, unlock an account, or transfer Aion.</p>
+    <p><strong>Accounts</strong>Any of the accounts shown from the viewing local accounts command below can be used to check balance, unlock an account, or transfer Aion.</p>
 </div>
 
 <h4 id="vawc">Viewing local accounts:</h4>
@@ -619,7 +616,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>Currently, Windows OS cannot be used to mine. Development for Windows-compatible miners may be considered in the future.</p>
 
 <h3 id="q4">What are the current mining pools?</h3>
-<p>During the initial Kilimanjaro launch, only the Aion solo miner is currently officially supported on the network. Users can join public pools at their own risk. The Aion Foundation may release an official mining pool at a later date.</p>
+<p>Currently, the pools supported by the Aion network include the solo-pool and the Aion public pool (<a href="https://blog.aion.network/new-aion-pool-software-6e3232527fal" target="blank">read about it here</a>). There are various public pools released by the community, but Aion users would join these pools at their own risk. </p>
 
 <h3 id="q5">How do I import a private key?</h3>
 <p>1. take the private key of the pair generated by web wallet<br>2. run <code class="highlighter-rouge">./aion.sh -a import private-key</code><br>3. <strong>aion.sh</strong> will be created in the <strong>keystore</strong> folder<br>4. print out the public key (address) of the private key<br>5. <code class="highlighter-rouge">./aion.sh -a list</code> to check if it matches the original pair.</p>
