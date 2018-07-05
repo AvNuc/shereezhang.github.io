@@ -30,8 +30,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
         <li><a href="../Mining/index.html">Mining</a></li>
-  <!--      <li><a href="../Dapp Development/index.html">Dapps</a></li>
-  -->   <li><a href="../Account Management/index.html">Account</a></li>   
+  <!--      <li><a href="../Dapp-Development/index.html">Dapps</a></li>
+  -->   <li><a href="../Account-Management/index.html">Account</a></li>   
         <li><a href="https://github.com/aionnetwork">Github</a></li>
 
 
@@ -48,8 +48,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
               <li><a href="../index.html">Docs <i class="icon icon--home"></i></a></li>
               <li><a href="../Mining/index.html">Mining</a></li>
-  <!--            <li><a href="../Dapp Development/index.html">Dapps</a></li>
-  -->         <li><a href="../Account Management/index.html">Account</a></li>   
+  <!--            <li><a href="../Dapp-Development/index.html">Dapps</a></li>
+  -->         <li><a href="../Account-Management/index.html">Account</a></li>   
               <li><a href="https://github.com/aionnetwork">Github</a></li>
 
             </ul><!-- /.site-header__nav -->
@@ -188,13 +188,13 @@ Once you have the binary file, you will need to unarchive the contents in your c
 
 <h2 id="aion-miner">Miner</h2>
 <p> A miner runs your system to solve a difficult mathematical problem by guessing the input value of a hash function. The difficulty of the problem is determined by network difficulty (which adjusts itself based on the network hash rate: higher hash rate results in greater difficulty).<br><br>
-There are two types of miners that can work with the kernel: Internal and External miner. <a href="../Aion Set-Up/index.html#internal-miner">Internal miner</a> does not mine on the network, but rather on your local kernel. It could be used to test and run your own chain, as it has a shorter set-up time and  adequate functionality to mine for AION on the <a href="https://conquest.aion.network/#/dashboard" target="blank">Conquest Testnet</a>.</p>
+There are two types of miners that can work with the kernel: Internal and External miner. <a href="index.html#internal-miner">Internal miner</a> does not mine on the network, but rather on your local kernel. It could be used to test and run your own chain, as it has a shorter set-up time and  adequate functionality to mine for AION on the <a href="https://conquest.aion.network/#/dashboard" target="blank">Conquest Testnet</a>.</p>
 
 <div class="callout callout--warning">
     <p><strong>Note</strong>Mining tokens on the testnet is for development purposes only. AION awarded on the testnet do not have trading value.</p>
 </div>
 
-<p><a href="../Aion Set-Up/index.html#external-miner">External miner</a> connects your kernel to the network, and mines AION tokens on the mainnet using either a solo or public mining pool.</p>
+<p><a href="index.html#external-miner">External miner</a> connects your kernel to the network, and mines AION tokens on the mainnet using either a solo or public mining pool.</p>
 
 <h3 id="internal-miner"><strong>Internal miner</strong></h3>
 <p>The internal miner runs on the local node and is provided with the kernel. It can be configured by modifying the <strong>config.xml</strong> file in the aion directory (aion/config/config.xml). To setup internal mining, update the following fields in the consensus section:</p>
@@ -222,7 +222,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 </div>
 
 <h3 id="external-miner"><strong>External miner</strong></h3>
-<p>Two types of miners, CPU and GPU-CUDA, are provided as options for external mining. These miners are designed to be used in conjunction with the provided <a href="../p/index.html#mining-pool">solo mining pool</a>. Future miner versions will be adapted to join public pools.<br><br>For mining, GPUs have a more simple architecture than CPUs, making them faster for mining. However, the specific hardware required for GPU-CUDA mining (NVIDIA 387.34+) may require separate installation onto your machine, and thus CPU mining may be more convenient.</p>
+<p>Two types of miners, CPU and GPU-CUDA, are provided as options for external mining. These miners are designed to be used in conjunction with the provided <a href="index.html#mining-pool">solo mining pool</a>. Future miner versions will be adapted to join public pools.<br><br>For mining, GPUs have a more simple architecture than CPUs, making them faster for mining. However, the specific hardware required for GPU-CUDA mining (NVIDIA 387.34+) may require separate installation onto your machine, and thus CPU mining may be more convenient.</p>
 
 <h3 id="cpu-miner"><strong>a) CPU miner</strong></h3>
 <p>Download the the pre-built CPU miner binary <strong>aionminer_CPU.tar.bz2</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and then follow the proceeding steps.</p>
