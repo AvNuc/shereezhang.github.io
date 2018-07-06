@@ -191,7 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img src="../doks-theme/assets/images/screenshots/9-pk.png" alt="wallet screenshot" style="width:auto;height:auto;">
 
 
-<h3 id="am-export-account"><strong>Export account</strong></h3>
+<h3 id="am-export-account"><strong>Export account</strong> (optional)</h3>
 <p>You may wish to save your accounts created on the Aion Wallet elsewhere. In this case, you will need to export the wallet (using the icon right of the accounts listing) and save the keystore file in your desired location. Note that the password you input here will be the new password to access the keystore file:</p>
 
 <img src="../doks-theme/assets/images/screenshots/12-export.png" alt="wallet screenshot" style="width:auto;height:auto;">
@@ -226,6 +226,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 
 <img src="../doks-theme/assets/images/screenshots/5-receive.png" alt="wallet screenshot" style="width:auto;height:auto;">  
+
+
+<h2 id="am-add-config"><strong>Additional Configuration</strong></h2>
+
+<h3 id="am-remote-node"><strong>Connect with a Remote Node</strong></h3>
+<p>If you wish to sync your wallet to an Aion node that is not running on your local machine, you may do so after making two changes in:</p>
+<ul>
+  <li> the configuration for the Aion kernel</li>
+  <li> your Aion Desktop Wallet "Settings" address</li>
+</ul>
+
+<h4 id="am-remote-kernel">Configure Aion kernel</h4>
+<p>You will first have to ensure that the <b>config.xml</b> file found in the aion/config folder of your aion kernel repository is modified such that the Java API accepts remote access. This will allow your wallet to connect with the node.</p>
+<p>1. Navigate to the <b>aion/config/config.xml</b> file<br>2. Change the IP address of the Java API section to 0.0.0.0<br>3. Save the config file and re-launch the kernel and wallet for changes to take effect.</p>
+
+<div class="example"></div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;java active="true" ip="0.0.0.0" port="8547"&gt;</span><span class="pi"></span>
+</code></pre></div></div>
+
+<h4 id="am-remote-wallet">Configure wallet</h4>
+<p>After configuring the node you wish to connect to, you will need to change wallet settings so the IP address points to the machine running it.</p>
+<p>1. Launch the Aion Desktop Wallet and navigate to the "Settings" tab<br>2. Change the IP from 127.0.0.1 to the address of the machine currently running the Aion node you wish to connect to<br>3. Click "Apply" to save your changes</p>
+
+<img src="../doks-theme/assets/images/screenshots/13-remote.png" alt="wallet screenshot" style="width:auto;height:auto;">  
+
+<h3 id="am-delete-switch"><strong>Delete or Switch Wallet</strong></h3>
+<p>If you wish to no longer use the wallet stored on your machine, or switch to another one, you have the option to delete the current wallet database and restart a fresh wallet (or restore an existing Aion wallet from its seed mnemonic).</p>
+
+<div class="callout callout--warning">
+    <p><strong>Note</strong>The deletion of your wallet database is permanent - you will not be able to recover the accounts unless you have the mnemonic and password backed up.</p>
+</div>
+
+<p>1. Open up terminal and navigate to the home directory (or run <code class="highlighter-rouge">cd</code> from any directory)<br>2. Remove the hidden file <b>.aion</b> using the command <code class="highlighter-rouge">rm -r .aion</code><br>3. Relaunch the Aion Desktop Wallet, you should notice that you will be prompted to <a href="index.html#am-add-account">add an account</a> from seed mnemonic or create a new account and password.</p> 
 
 
             </div><!-- /.content -->
