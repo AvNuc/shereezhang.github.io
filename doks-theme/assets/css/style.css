@@ -312,12 +312,12 @@ hr{
     margin:0 0 1.25rem 0
 }
 ::-moz-selection{
-    background:rgba(90,240,189,0.20);
-    color:#5af0bd
+    background:#5af0bd;
+    color:#12173a;
 }
 ::selection{
-    background:rgba(90,240,189,0.20);
-    color:#5af0bd
+    background:#5af0bd;
+    color:#12173a;
 }
 blockquote{
     margin:0 0 1.25rem 0
@@ -1831,7 +1831,7 @@ pre.highlight{
     padding:9.375rem 0 3.4375rem 0
 }
 @media (min-width: 768px){
-    .site-header+.hero-subheader{   
+    .site-header+.hero-subheader{
     }
 }
 @media (min-width: 768px){
