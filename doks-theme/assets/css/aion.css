@@ -2143,10 +2143,12 @@ body,html{
     height:auto
 }
 body ::-moz-selection,html ::-moz-selection{
-    background:#5af0bd
+    background:#5af0bd;
+    color: red !important;
 }
 body ::selection,html ::selection{
-    background:#5af0bd
+    background:#5af0bd;
+    color: red !important;
 }
 a,div,h1,h2,h3,h4,h5,h6,li,p,span{
     font-family:"Myriad Pro",helvetica,sans-serif,monospace;
