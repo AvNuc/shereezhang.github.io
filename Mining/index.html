@@ -102,11 +102,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="using-owners-manual">Mining Overview</h2>
 <p>Follow through this manual to install Aion and start using its various features. You'll soon be participating in the Aion Network ecosystem.
   <br><br>This guide will take you through the following three modules: 
-<ul>
-  <li>1. Aion kernel</li>
-  <li>2. Aion miner</li>
-  <li>3. Solo mining pool</li>
-</ul>
+<ol>
+  <li> Aion kernel</li>
+  <li> Aion miner</li>
+  <li> Solo mining pool</li>
+</ol>
 
 <p>We have compiled some <a href="../Mining/index.html#FAQ">FAQ</a>, please feel free to reach out to the Aion team for additional questions.</p>
 
@@ -142,8 +142,12 @@ Once you have the binary file, you will need to unarchive the contents in your c
     <p><strong>Note</strong>You should backup the keystore folder to ensure you do not lose access to your accounts; there is no recovery mechanism for the lost keys.</p>
 </div>
 
-<p>1. Go to <strong>aion</strong> directory<br>2. Open a terminal and run the following command:<br><code class="highlighter-rouge">./aion.sh -a create</code><br>3. Input your chosen password once prompted (note that your password will not appear on terminal as you are typing it)<br>4. Copy and save the created account address shown.</p>
-
+<ol>
+  <li>Go to <strong>aion</strong> directory</li>
+  <li>Open a terminal and run<br<<code class="highlighter-rouge">./aion.sh -a create</code></li>
+  <li>Input your chosen password once prompted (note that your password will not appear on terminal as you are typing it)</li>
+  <li>Copy and save the created account address shown</li>
+</ol>
 
 <h3 id="opt-section"><strong>Peer ID and Seed Nodes (optional)</strong></h3>
 <h4>Generating peer ID</h4>
@@ -169,21 +173,27 @@ Once you have the binary file, you will need to unarchive the contents in your c
 
 <h3 id="launch-kernel"><strong>Launch Kernel</strong></h3>
 <p>Begin syncing your node with the Aion network.</p> 
-
-<p>1. Navigate to the <strong>aion</strong> directory<br>2. Open a terminal and run:<br><code class="highlighter-rouge">./aion.sh</code></p>
+<ol>
+  <li>Navigate to the <strong>aion</strong> directory</li>
+  <li>Open a terminal and run:<br><code class="highlighter-rouge">./aion.sh</code></li>
+</ol>
 
 <h3 id="connection-status"><strong>View Connection Status (optional)</strong></h3>
 
 <h4>Display connected peers:</h4>
-<p>1. Access the <strong>config.xml</strong> file<br>2. Set show-status to true under the <strong>sync</strong> section:</p>
+<ol>
+  <li>Access the <strong>config.xml</strong> file</li>
+  <li>Set show-status to true under the <strong>sync</strong> section:</li>
+</ol>
+
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;sync&gt;&lt;show-status&gt;true&lt;/show-status&gt;&lt;/sync&gt;</span><span class="pi"></span></code></pre></div></div>
 
 <h4>View connected peers:</h4>
-<p>1. Open another terminal<br>2. Run the following command to view connected peers<br><code class="highlighter-rouge">netstat -antp | grep java</code></p>
-
-
-
+<ol>
+  <li>Open another terminal</li>
+  <li>Run the following command to view connected peers:<br><code class="highlighter-rouge">netstat -antp | grep java</code></li>
+</ol>
 
 
 <h2 id="aion-miner">Miner</h2>
@@ -228,7 +238,10 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>Download the the pre-built CPU miner binary <strong>aionminer_CPU.tar.bz2</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and then follow the proceeding steps.</p>
 
 <h4 id="unarchive-binary">Unarchive the miner binary file:</h4>
-<p>1. Copy the <strong>aionminer_CPU.tar.bz2</strong> file into the <strong>aion</strong> directory<br>2. Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xvjf aionminer_CPU.tar.bz2</code></p>
+<ol>
+  <li>Copy the <strong>aionminer_CPU.tar.bz2</strong> file into the <strong>aion</strong> directory</li>
+  <li>Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xvjf aionminer_CPU.tar.bz2</code></li>
+</ol>
 
 <h4 id="run-binary">Run the aionminer file with the desired parameter values:</h4>
 <table>
@@ -298,7 +311,10 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p><strong>Requirements:</strong> CUDA 9.0 compatible driver (NVIDIA 387.34+) for GPU based mining. <br><br>Download the pre-built GPU miner binary <strong>aionminer_CPU.tar.bz2</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and then follow the proceeding steps.</p>
 
 <h4 id="unarchive-bin">Unarchive the miner binary file:</h4>
-<p>1. Copy the <strong>aionminer_CUDA.tar.bz2 </strong> file into the <strong>aion</strong> directory<br>2. Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xvjf aionminer_CUDA.tar.bz2</code></p>
+<ol>
+  <li>Copy the <strong>aionminer_CUDA.tar.bz2 </strong> file into the <strong>aion</strong> directory</li>
+  <li>Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xvjf aionminer_CUDA.tar.bz2</code></li>
+</ol>
 
 <h4 id="run-bin">Run the aionminer file with the desired parameter values:</h4>
 
@@ -413,7 +429,12 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>*Included by default with Ubuntu desktop, may need to be installed separately in Ubuntu server (see below):</p>
 
 <div class="callout callout--warning">
-    <p><strong>Python installation (if necessary):</strong>1. Open terminal <br>2. Run the following commands:<br><code class="highlighter-rouge">sudo apt-get update<br> sudo apt-get install build-essential make <br> sudo apt-get install python2.7 python-dev</code></p>
+    <p><strong>Python installation (if necessary):</strong>
+    <ol>
+      <li>Open terminal</li>
+      <li>Run the following commands:<br> <code class="highlighter-rouge">sudo apt-get update <br> sudo apt-get install build-essential make <br> sudo apt-get install python2.7 python-dev</code></li>
+    </ol>
+  </p>
 </div>
 
 <h3 id="config-update"><strong>Update Configuration File</strong></h3>
@@ -444,10 +465,13 @@ There are two types of miners that can work with the kernel: Internal and Extern
 
 
 <h3 id="install-run-sp"><strong>Install and Run</strong></h3>
-<p>Download the latest prepackaged mining pool file <strong>aion-solo-pool-{version}.tar.gz</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a>, and follow the proceeding steps:</p>
 
-<h4>Unpack the aion-solo-pool file:</h4>
-<p>1. Navigate to the download directory<br>2. Open terminal and extract the file by running the command:<br><code class="highlighter-rouge">tar xf aion-solo-pool-{VERSION}.tar.gz</code></p>
+
+<h4>Install the aion-solo-pool file:</h4>
+<ol>
+  <li>Download the latest prepackaged mining pool file <strong>aion-solo-pool-{version}.tar.gz</strong> from the aion_miner <a href="https://github.com/aionnetwork/aion_miner/releases" target="blank">release page</a></li>
+  <li>Extract the file to the desired directory</li>
+</ol>
 
 <h4>Run the configure script:</h4>
 <p>Open terminal in the <strong>aion-solo-pool-{VERSION}</strong> directory, run the command<br>
@@ -461,7 +485,12 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>In the same terminal, run<br><code class="highlighter-rouge">./run_quickstart.sh</code></p>
 
 <div class="callout callout--warning">
-    <p><strong>Launch the Aion kernel in a separate terminal:</strong>1. Navigate to the aion directory<br>2. Open a terminal and run:<br><code class="highlighter-rouge">./aion.sh</code></p>
+    <p><strong>Launch the Aion kernel in a separate terminal:</strong>
+      <ol>
+        <li>Navigate to the aion directory</li>
+        <li>Open a terminal and run:<br><code class="highlighter-rouge">./aion.sh</code></li>
+      </ol>
+    </p>
 </div> 
 
 <p><strong>If you now have the kernel, miner, and solo-mining-pool running, congrats! You're now mining on Aion.</strong></p>
@@ -489,7 +518,7 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>You can include Aion’s Web3 API in your application using Web or Node.</p>
 
 <h4>Web use:</h4>
-<p>Include <code class="highlighter-rouge">dist/web3.min.js </code><br> in your html file.</p>
+<p>Include <code class="highlighter-rouge">dist/web3.min.js </code> in your html file.</p>
 
 <h4>Node use:</h4>
 <p><code class="highlighter-rouge">var Web3 = require('aion-web3')<br>var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));</code></p>
@@ -509,7 +538,14 @@ There are two types of miners that can work with the kernel: Internal and Extern
 </div> 
 
 <h4>Running the Web3 console:</h4>
-<p>1. Navigate to the <strong>aion</strong> directory<br>2. Open a terminal and run the kernel using<br><code class="highlighter-rouge">./aion.sh</code><br>3. Navigate to the <strong>web3</strong> folder<br>4. Open a new terminal and run the console using<br><code class="highlighter-rouge">node console.js</code><br>If the above command does not work, try <code class="highlighter-rouge">npm install</code> first.</p>
+<p>
+  <ol>
+    <li>Navigate to the <strong>aion</strong> directory</li>
+    <li>Open a terminal and run the kernel using<br><code class="highlighter-rouge">./aion.sh</code></li>
+    <li>Navigate to the <strong>web3</strong> folder</li>
+    <li>Open a new terminal and run the console using<br><code class="highlighter-rouge">node console.js</code><br>(If the above command does not work, try <code class="highlighter-rouge">npm install</code> first)</li>
+  </ol>
+</p>
 
 <h3 id="view-accounts-wc"><strong>View Local Accounts and Balances</strong></h3>
 
@@ -518,16 +554,31 @@ There are two types of miners that can work with the kernel: Internal and Extern
 </div>
 
 <h4>Viewing local accounts:</h4>
-<p>1. Run the Web3 console<br>2. Run the command<br><code class="highlighter-rouge">personal.listAccounts</code></p>
+<p>
+  <ol>
+    <li>Run the Web3 console</li>
+    <li>Run the command<br><code class="highlighter-rouge">personal.listAccounts</code></li>
+  </ol>
+</p>
 
 <h4>Checking balance:</h4>
-<p>1. Run the Web3 console<br>2. Run the command<br><code class="highlighter-rouge">eth.getBalance('{0xacc}')</code><br><strong>or</strong><br><code class="highlighter-rouge">eth.getBalance('{0xacc}').toString()</code></p>
+<p>
+  <ol>
+    <li>Run the Web3 console</li>
+    <li>Run the command<br><code class="highlighter-rouge">eth.getBalance('{0xacc}')</code><br><strong>or</strong><br><code class="highlighter-rouge">eth.getBalance('{0xacc}').toString()</code></li>
+  </ol>
+</p>
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span>eth.getBalance(‘0xa012341234123412341234123412341234123412341234123412341234123412’)</span></code></pre></div></div>
 
 <h3 id="unlock-account"><strong>Unlock Account</strong></h3>
 <p>In order to make a transaction, the sender should first unlock their account.</p>
-<p>1. Run the Web3 console<br>2. Run the command<br><code class="highlighter-rouge">personal.unlockAccount('{0xacc}', '{pw}', {secondsToUnlock})</code></p>
+<p>
+  <ol>
+    <li>Run the Web3 console</li>
+    <li>Run the command<br><code class="highlighter-rouge">personal.unlockAccount('{0xacc}', '{pw}', {secondsToUnlock})</code></li>
+  </ol>
+</p>
 
 <table>
   <thead>
@@ -564,7 +615,13 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <h3 id="transfer-aion"><strong>Transfer Aion</strong></h3>
 <p>You can send a transaction from one account to another with a specified value. The account of sender should be unlocked before making the transfer.</p>
 
-<p>1. Run the Web3 console<br>2. Unlock your (sender) account<br>3. Run the command<br><code class="highlighter-rouge">eth.sendTransaction({from:'{0xacc_from}',to:'{0xacc_to}',value: {amount_to_transfer}})</code></p>
+<p>
+  <ol>
+    <li>Run the Web3 console</li>
+    <li>Unlock your (sender) account</li>
+    <li>Run the command<br><code class="highlighter-rouge">eth.sendTransaction({from:'{0xacc_from}',to:'{0xacc_to}',value: {amount_to_transfer}})</code></li>
+  </ol>
+</p>
 
 <table>
   <thead>
@@ -617,9 +674,15 @@ There are two types of miners that can work with the kernel: Internal and Extern
 <p>Currently, the pools supported by the Aion network include the solo-pool and the Aion public pool (<a href="https://blog.aion.network/new-aion-pool-software-6e3232527fa" target="blank">read about it here</a>). There are various public pools released by the community, but Aion users would join these pools at their own risk.</p>
 
 <h4 id="m-q5"><strong>How do I import a private key?</strong></h4>
-<p>1. take the private key of the pair generated by web wallet<br>2. run <code class="highlighter-rouge">./aion.sh -a import private-key</code><br>3. <strong>aion.sh</strong> will be created in the <strong>keystore</strong> folder<br>4. print out the public key (address) of the private key<br>5. <code class="highlighter-rouge">./aion.sh -a list</code> to check if it matches the original pair.</p>
-
-
+<p>
+  <ol>
+    <li>Take the private key of the pair generated by web wallet</li>
+    <li>Run <code class="highlighter-rouge">./aion.sh -a import private-key</code></li>
+    <li><strong>aion.sh</strong> will be created in the <strong>keystore</strong> folder</li>
+    <li>Print out the public key (address) of the private key</li>
+    <li>Run <code class="highlighter-rouge">./aion.sh -a list</code> to check if it matches the original pair</li>
+  </ol>
+</p>
 
             </div><!-- /.content -->
           </div><!-- /.col -->

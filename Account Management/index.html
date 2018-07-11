@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-<title>Account</title>
+<title>Account Management</title>
 
   <meta name="description" content="Here you will find more information on your Aion account, including set-up and interaction with the Aion Desktop Wallet.">
 
@@ -135,14 +135,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 
 <h3 id="am-kernel"><strong>Sync Aion Kernel</strong></h3>
-<p>1. Download the most recent Aion binary file <strong>aion-{version}.tar.bz2</strong> <a href="https://github.com/aionnetwork/aion/releases" target="blank">here</a><br>2. Extract the binary file to a desired destination<br>3. Navigate to the newly created <strong>aion</strong> directory<br>4. Open up terminal here and run the command <code class="highlighter-rouge">./aion.sh</code><br><br>This script will launch the kernel and begin syncing your node to the main Aion network. This is a necessary step before you can install the Aion Desktop Wallet.</p>
+<p>
+  <ol>
+    <li>Download the most recent Aion binary file <strong>aion-{version}.tar.bz2</strong> <a href="https://github.com/aionnetwork/aion/releases" target="blank">here</a></li>
+    <li>Extract the binary file to a desired destination</li>
+    <li>Navigate to the newly created <strong>aion</strong> directory</li>
+    <li>Open up terminal here and run the command <code class="highlighter-rouge">./aion.sh</code></li>
+  </ol>
+  This script will launch the kernel and begin syncing your node to the main Aion network. This is a necessary step before you can install the Aion Desktop Wallet.
+</p>
 
 <div class="callout callout--warning">
     <p><strong>Note</strong>The initial syncing process will take multiple hours. You can proceed with the steps to install your Aion wallet; however, transactions through the wallet will not be accepted until the kernel is finished syncing.</p>
 </div>
 
 <h3 id="am-install-wallet"><strong>Install Aion Wallet</strong></h3>
-<p>1. Download the Aion Desktop Wallet repository <a href="https://github.com/aionnetwork/aion_ui/releases/tag/v1.0.0" target="blank"><strong>aion_wallet-{version}.tar.bz2</strong></a><br>2. Extract the folder to the desired directory.<br> 3. Navigate to the newly created <strong>aion_wallet</strong> directory<br>4. Open up terminal here and run the command <code class="highlighter-rouge">./aion_wallet.sh</code><br><br>This script will install necessary components and launch the wallet interface. This window should open shortly:</p>
+<p>
+  <ol>
+    <li>Download the Aion Desktop Wallet repository <a href="https://github.com/aionnetwork/aion_ui/releases/tag/v1.0.0" target="blank"><strong>aion_wallet-{version}.tar.bz2</strong></a></li>
+    <li>Extract the folder to the desired directory</li>
+    <li>Navigate to the newly created <strong>aion_wallet</strong> directory</li>
+    <li>Open up terminal here and run the command <code class="highlighter-rouge">./aion_wallet.sh</code></li>
+  </ol>
+This script will install necessary components and launch the wallet interface. This window should open shortly:</p>
 
 <img src="../doks-theme/assets/images/screenshots/1-accounts.png" alt="wallet screenshot" style="width:auto;height:auto;">
 
@@ -155,10 +170,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 
 <h4 id="am-recover">Recover Wallet</h4>
-<p>1. Input mnemonic<br>2. Input corresponding wallet password<p>
+<p>
+  <ol>
+    <li>Input mnemonic</li>
+    <li>Input corresponding wallet password</li>
+  </ol>
+</p>
 
 <h4 id="am-create-acc">Create an Account</h4>
-<p>1. Select an account name (this can be edited later)<br>2. Select a password<br>3. Confirm chosen password<br>4. Save and backup the seed mnemonic that appears - you will need it if you wish to recover your wallet later:</p>
+<p>
+  <ol>
+    <li>Select an account name (this can be edited later)</li>
+    <li>Select a password</li>
+    <li>Confirm chosen password</li>
+    <li>Save and backup the seed mnemonic that appears - you will need it if you wish to recover your wallet later:</li>
+  </ol>
+</p>
 
 <img src="../doks-theme/assets/images/screenshots/2-mnemonic.png" alt="wallet screenshot" style="width:auto;height:auto;">
 
@@ -181,12 +208,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <h4 id="am-import-keystore">Import with Keystore File</h4>
-<p>1. Click on the keystore space, and navigate to select your desired Keystore UTC file<br>2. Input corresponding keystore password<p>
+<p>
+  <ol>
+    <li>Click on the keystore space, and navigate to select your desired Keystore UTC file</li>
+    <li>Input corresponding keystore password</li>
+  </ol>
+</p>
 
 <img src="../doks-theme/assets/images/screenshots/8-keystore.png" alt="wallet screenshot" style="width:auto;height:auto;">
 
 <h4 id="am-import-pk">Import with Private Key</h4>
-<p>1. Input your private key (tutorial to obtain private key <a href="https://github.com/aionnetwork/aion/wiki/Importing-Accounts" target="blank">here</a>)<br>2. Select a password to use to unlock the account (Note: input this password correctly, currently there is no way to change this password)</p>
+<p>
+  <ol>
+    <li>Input your private key (tutorial to obtain private key <a href="https://github.com/aionnetwork/aion/wiki/Importing-Accounts" target="blank">here</a>)</li>
+    <li>Select a password to use to unlock the account (Note: input this password correctly, currently there is no way to change this password)</li>
+  </ol>
+</p>
 
 <img src="../doks-theme/assets/images/screenshots/9-pk.png" alt="wallet screenshot" style="width:auto;height:auto;">
 
@@ -199,7 +236,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <h3 id="am-send"><strong>Send AION</strong></h3>
-<p>1. Make sure the account you wish to send AION from is unlocked under the "Accounts" listing (click on the lock icon to unlock an account)<br>2. Navigate to the "Send" option in your wallet, and verify your account information on the left <br>3. On the right panel, input the address you are sending to, and the amount to send in number of AION<br>4. Click on "Generate transaction" to send the AION, and you will be notified when the transaction finishes.</p>
+<p>
+  <ol>
+    <li>Make sure the account you wish to send AION from is unlocked under the "Accounts" listing (click on the lock icon to unlock an account)</li>
+    <li>Navigate to the "Send" option in your wallet, and verify your account information on the left </li>
+    <li>On the right panel, input the address you are sending to, and the amount to send in number of AION</li>
+    <li>Click on "Generate transaction" to send the AION, and you will be notified when the transaction finishes</li>
+  </ol>
+</p>
 
 <img src="../doks-theme/assets/images/screenshots/4-send.png" alt="wallet screenshot" style="width:auto;height:auto;">
 
@@ -239,7 +283,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h4 id="am-remote-kernel">Configure Aion kernel</h4>
 <p>You will first have to ensure that the <b>config.xml</b> file found in the aion/config folder of your aion kernel repository is modified such that the Java API accepts remote access. This will allow your wallet to connect with the node.</p>
-<p>1. Navigate to the <b>aion/config/config.xml</b> file<br>2. Change the IP address of the Java API section to 0.0.0.0<br>3. Save the config file and re-launch the kernel and wallet for changes to take effect.</p>
+<p>
+  <ol>
+    <li>Navigate to the <b>aion/config/config.xml</b> file</li>
+    <li>Change the IP address of the Java API section to 0.0.0.0</li>
+    <li>Save the config file and re-launch the kernel and wallet for changes to take effect</li>
+  </ol>
+</p>
 
 <div class="example"></div>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">&lt;java active="true" ip="0.0.0.0" port="8547"&gt;</span><span class="pi"></span>
@@ -247,7 +297,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h4 id="am-remote-wallet">Configure wallet</h4>
 <p>After configuring the node you wish to connect to, you will need to change wallet settings so the IP address points to the machine running it.</p>
-<p>1. Launch the Aion Desktop Wallet and navigate to the "Settings" tab<br>2. Change the IP from 127.0.0.1 to the address of the machine currently running the Aion node you wish to connect to<br>3. Click "Apply" to save your changes</p>
+<p>
+  <ol>
+    <li>Launch the Aion Desktop Wallet and navigate to the "Settings" tab</li>
+    <li>Change the IP from 127.0.0.1 to the address of the machine currently running the Aion node you wish to connect to</li>
+    <li>Click "Apply" to save your changes</li>
+  </ol>
+</p>
 
 <img src="../doks-theme/assets/images/screenshots/13-remote.png" alt="wallet screenshot" style="width:auto;height:auto;">  
 
@@ -258,7 +314,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p><strong>Note</strong>The deletion of your wallet database is permanent - you will not be able to recover the accounts unless you have the mnemonic and password backed up.</p>
 </div>
 
-<p>1. Open up terminal and navigate to the home directory (or run <code class="highlighter-rouge">cd</code> from any directory)<br>2. Remove the hidden file <b>.aion</b> using the command <code class="highlighter-rouge">rm -r .aion</code><br>3. Relaunch the Aion Desktop Wallet, you should notice that you will be prompted to <a href="index.html#am-add-account">add an account</a> from seed mnemonic or create a new account and password.</p> 
+<p>
+  <ol>
+    <li>Open up terminal and navigate to the home directory (or run <code class="highlighter-rouge">cd</code> from any directory)</li>
+    <li>Remove the hidden file <b>.aion</b> using the command <code class="highlighter-rouge">rm -r .aion</code></li>
+    <li>Relaunch the Aion Desktop Wallet, you should notice that you will be prompted to <a href="index.html#am-add-account">add an account</a> from seed mnemonic or create a new account and password</li>
+  </ol>
+</p> 
 
 
             </div><!-- /.content -->
