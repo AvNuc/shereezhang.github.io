@@ -122,6 +122,17 @@
                 </p>
               </div>
 
+              <div class="callout callout--info">
+              <p><strong>Virtual Machine</strong>If you do not wish to partition your hard disk to install Ubuntu, you can run a virtual machine (Note: the sync of the Aion kernel may take significant memory). Some resources to run a VM are listed below:</p>
+               <ul>
+                <li><a href="https://download.virtualbox.org/virtualbox/5.2.14/VirtualBox-5.2.14-123301-Win.exe" target="blank">Windows - Oracle VirtualBox download</a></li>
+                <li><a href="https://download.virtualbox.org/virtualbox/5.2.14/VirtualBox-5.2.14-123301-OSX.dmg" target="blank">OS X - Oracle VirtualBox download</a></li>
+                <li><a href="https://www.lifewire.com/run-ubuntu-within-windows-virtualbox-2202098" target="blank">Windows guide for Ubuntu on VirtualBox</a></li>
+                <li><a href="https://techfire.in/install-ubuntu-mac-virtualbox/" target="blank">Mac guide for Ubuntu on VirtualBox</a></li>
+              </ul>
+              <p>Although you may set-up and interact with Aion through VirtualBox, extensive development on Aion through a virtual machine is not recommended.</p>
+              </div>
+
             <!-- SMART CONTRACTS ON AION -->
               <h2 id="dapp-smart-contracts">Smart Contracts on Aion</h2>
               <h3 id="dapp-intro-sc"><strong>Intro to Smart Contracts</strong></h3>
@@ -205,30 +216,30 @@
                   Configure your smart contract for compiling.
                   <ol>
                     <li>
-                      <p>Download or clone the demo app <a href="index.html" target="blank">repository [FIX THIS LINK!]</a></p>
+                      <p>Download or clone the <a href="https://github.com/aionnetwork/aion_qa" target="blank">aion_qa repository</a></p>
                     </li>
                     <li>
-                      <p>Navigate into the demo-app directory and <code class="highlighter-rouge">npm install</code> (This command installs all the packages we'll need - you can find the dependencies in the <b>package.json</b> file)</p>
+                      <p>Navigate into the DemoDApp directory and <code class="highlighter-rouge">npm install</code> (This command installs all the packages we'll need - you can find the dependencies in the <b>package.json</b> file)</p>
                     </li>
                     <li>
-                      <p>Navigate to the demo-app/src directory and check that you have a contracts folder containing the <b>Counter.sol</b> file</p>
+                      <p>Navigate to the DemoDApp/src directory and check that you have a contracts folder containing the <b>Counter.sol</b> file</p>
                     </li>
                     <li>
                       <p>
-                        Open <b>deploy_counter.js</b> file and make the following changes:
+                        Open <b>deploy_counter.js</b> file in the src folder and make the following changes:
                         <ul>
                           <li>
-                            <p>line 8: edit directory path to where your aion/web3 is located (from home, or check the directory using the <code class="highlighter-rouge">pwd</code>  command)</p>
+                            <p>line 10: edit directory path to where your aion/web3 is located (from home, or check the directory using the <code class="highlighter-rouge">pwd</code> command)</p>
                           </li>
                           <li>
-                            <p>line 26: edit a0 to the index number your address is in (you can find this in web3 console -> <a href="../Mining/index.html#view-accounts-wc" target="blank">personal.listAccounts</a>).
+                            <p>line 28: edit a0 to the index number your address is in (you can find this in web3 console -> <a href="../Mining/index.html#view-accounts-wc" target="blank">personal.listAccounts</a>).
                               <br />
                               <b>Note:</b>
                               Lists are indexed starting at 0</p>
                           </li>
                           <li>
                             <p>
-                              line 27: edit pw0 = “password associated with account address”
+                              line 29: edit pw0 = “password associated with account address”
                             </p>
                           </li>
                         </ul>
@@ -250,7 +261,7 @@
                   Running a script to deploy the smart contract.
                   <ol>
                     <li>
-                      <p>Navigate to the demo-app/src directory in terminal</p>
+                      <p>Navigate to the DemoDApp/src directory in terminal</p>
                     </li>
                     <li>
                       <p>Run script: <code class="highlighter-rouge">node deploy_counter.js</code></p>
@@ -278,23 +289,23 @@
                   Make function calls to a deployed smart contract instance. You will need the contract address and an unlocked account with balance.
                   <ol>
                     <li>
-                      <p>Navigate to demo-app/src/ and open the <b>interact_counter.js</b> file</p>
+                      <p>Navigate to DemoDApp/src/ and open the <b>interact_counter.js</b> file</p>
                     </li>
                     <li>
-                      <p>Make the same changes as in the Deploy script, modifing web3 directory, account, and password:</p>
+                      <p>Make the same changes as in the deploy_counter.js script, modifing web3 directory, account, and password:</p>
                       <ul>
                         <li>
-                          <p>line 8: edit directory path to where your aion/web3 is located (from home, or check the directory using the <code class="highlighter-rouge">pwd</code>  command)</p>
+                          <p>line 10: edit directory path to where your aion/web3 is located (from home, or check the directory using the <code class="highlighter-rouge">pwd</code>  command)</p>
                         </li>
                         <li>
-                          <p>line 26: edit a0 to the index number your address is in (you can find this in web3 console -> <a href="../Mining/index.html#view-accounts-wc" target="blank">personal.listAccounts</a>).
+                          <p>line 28: edit a0 to the index number your address is in (you can find this in web3 console -> <a href="../Mining/index.html#view-accounts-wc" target="blank">personal.listAccounts</a>).
                             <br />
                             <b>Note:</b>
                             Lists are indexed starting at 0</p>
                         </li>
                         <li>
                           <p>
-                            line 27: edit pw0 = “password associated with account address”
+                            line 29: edit pw0 = “password associated with account address”
                           </p>
                         </li>
                       </ul>
